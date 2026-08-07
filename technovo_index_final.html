@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technovo | Tecnología, IA, Apps y Gaming</title>
+<meta name="description" content="Technovo: noticias, guías y artículos sobre tecnología, inteligencia artificial, aplicaciones, seguridad digital y gaming.">
+<meta name="keywords" content="tecnología, inteligencia artificial, IA, aplicaciones, gaming, seguridad digital, noticias tecnológicas">
+<meta name="author" content="Technovo">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://diego123xd.github.io/technovo/">
+<meta property="og:title" content="Technovo | Tecnología y novedades">
+<meta property="og:description" content="Noticias, guías y artículos sobre tecnología, inteligencia artificial, aplicaciones y gaming.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://diego123xd.github.io/technovo/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                primary: "#15157d",
+                primaryContainer: "#2e3192",
+                secondary: "#00696f",
+                secondaryContainer: "#00f1fe",
+                background: "#f9f9ff",
+                surface: "#f9f9ff",
+                surfaceLow: "#f0f3ff",
+                surfaceHigh: "#dee8ff",
+                text: "#111c2d",
+                muted: "#464652",
+                outline: "#777683"
+            },
+            fontFamily: { inter: ["Inter","sans-serif"] }
+        }
+    }
+}
+</script>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f9f9ff;color:#111c2d;font-family:Inter,sans-serif;overflow-x:hidden}
+.hero-gradient{background:radial-gradient(circle at 80% 20%,rgba(0,241,254,.15) 0%,rgba(249,249,255,0) 50%),radial-gradient(circle at 20% 80%,rgba(21,21,125,.08) 0%,rgba(249,249,255,0) 50%)}
+.cta-gradient{background:linear-gradient(135deg,#15157d 0%,#006a70 100%)}
+.glass-card{background:rgba(255,255,255,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.5);box-shadow:0 4px 20px rgba(0,0,0,.05)}
+.glass-card:hover{box-shadow:0 12px 35px rgba(21,21,125,.10)}
+.article-image{transition:transform .5s ease}
+.article-card:hover .article-image{transform:scale(1.05)}
+.ad-container{min-height:120px;border:1px dashed #c7c5d4;background:rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;color:#777683;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.mobile-menu{display:none}
+.mobile-menu.active{display:block}
+@media(max-width:768px){.hero-title{font-size:38px;line-height:1.12}}
+</style>
+</head>
+
+<body class="bg-background text-text min-h-screen flex flex-col pt-20">
+
+<header class="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+<div class="max-w-7xl mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
+<a href="index.html" class="flex items-center gap-2 group">
+<span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition">bolt</span>
+<span class="text-2xl font-extrabold tracking-tighter text-primary">TECHNOVO</span>
+</a>
+
+<nav class="hidden md:flex items-center gap-8">
+<a href="#inicio" class="text-primary font-bold border-b-2 border-secondary pb-1">Inicio</a>
+<a href="#tecnologia" class="text-gray-600 hover:text-primary transition">Tecnología</a>
+<a href="#ia" class="text-gray-600 hover:text-primary transition">IA</a>
+<a href="#apps" class="text-gray-600 hover:text-primary transition">Apps</a>
+<a href="#gaming" class="text-gray-600 hover:text-primary transition">Gaming</a>
+</nav>
+
+<div class="hidden md:flex items-center gap-4">
+<button onclick="openSearch()" class="text-gray-600 hover:text-primary" aria-label="Buscar">
+<span class="material-symbols-outlined">search</span>
+</button>
+<a href="#articulos" class="bg-cyan-300 text-secondary font-bold py-2 px-6 rounded-lg hover:opacity-90 transition">Explorar</a>
+</div>
+
+<button onclick="toggleMenu()" class="md:hidden text-primary" aria-label="Abrir menú">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+
+<div id="mobileMenu" class="mobile-menu bg-white border-t md:hidden">
+<nav class="flex flex-col px-6 py-5 gap-5">
+<a href="#inicio" onclick="toggleMenu()">Inicio</a>
+<a href="#tecnologia" onclick="toggleMenu()">Tecnología</a>
+<a href="#ia" onclick="toggleMenu()">Inteligencia Artificial</a>
+<a href="#apps" onclick="toggleMenu()">Aplicaciones</a>
+<a href="#gaming" onclick="toggleMenu()">Gaming</a>
+</nav>
+</div>
+</header>
+
+<main class="flex-grow">
+
+<section id="inicio" class="relative pt-16 pb-20 md:pt-32 md:pb-32 overflow-hidden hero-gradient">
+<div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+<div class="text-center max-w-4xl mx-auto">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest mb-8">
+<span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+El futuro de la tecnología
+</div>
+<h1 class="hero-title text-5xl md:text-6xl font-extrabold tracking-tight text-primary mb-6">
+Tecnología que acelera tu mundo
+</h1>
+<p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+Noticias, guías, inteligencia artificial, aplicaciones, gaming y las novedades tecnológicas que necesitas conocer.
+</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="#articulos" class="bg-primary text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:-translate-y-1 transition">Explorar artículos</a>
+<a href="#categorias" class="border border-gray-300 text-primary font-semibold py-4 px-8 rounded-xl hover:bg-white transition">Ver categorías</a>
+</div>
+</div>
+
+<div class="mt-16 max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-blue-100">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80" alt="Tecnología y dispositivos electrónicos" class="w-full h-[280px] md:h-[500px] object-cover">
+</div>
+</div>
+<div class="absolute top-1/4 left-0 w-64 h-64 bg-cyan-300/20 rounded-full blur-3xl -translate-x-1/2"></div>
+<div class="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl translate-x-1/3"></div>
+</section>
+
+<section class="py-5 px-4">
+<div class="max-w-5xl mx-auto">
+<div class="ad-container rounded-xl">Publicidad</div>
+</div>
+</section>
+
+<section id="categorias" class="py-16 bg-white border-y border-blue-100">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Explora Technovo</h2>
+<p class="text-gray-600">Encuentra contenido sobre lo que más te interesa.</p>
+</div>
+
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<a href="#tecnologia" class="glass-card rounded-xl p-6 text-center hover:-translate-y-1 transition"><span class="material-symbols-outlined text-primary text-4xl">devices</span><h3 class="font-bold mt-3">Tecnología</h3></a>
+<a href="#ia" class="glass-card rounded-xl p-6 text-center hover:-translate-y-1 transition"><span class="material-symbols-outlined text-primary text-4xl">smart_toy</span><h3 class="font-bold mt-3">IA</h3></a>
+<a href="#apps" class="glass-card rounded-xl p-6 text-center hover:-translate-y-1 transition"><span class="material-symbols-outlined text-primary text-4xl">apps</span><h3 class="font-bold mt-3">Apps</h3></a>
+<a href="#gaming" class="glass-card rounded-xl p-6 text-center hover:-translate-y-1 transition"><span class="material-symbols-outlined text-primary text-4xl">sports_esports</span><h3 class="font-bold mt-3">Gaming</h3></a>
+<a href="#articulos" class="glass-card rounded-xl p-6 text-center hover:-translate-y-1 transition"><span class="material-symbols-outlined text-primary text-4xl">newspaper</span><h3 class="font-bold mt-3">Noticias</h3></a>
+</div>
+</div>
+</section>
+
+<section id="articulos" class="py-20 bg-blue-50">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<div class="text-xs font-bold uppercase tracking-widest text-secondary mb-3">Contenido de Technovo</div>
+<h2 class="text-3xl md:text-4xl font-bold text-primary">Artículos destacados</h2>
+</div>
+<span class="mt-5 md:mt-0 text-gray-500 text-sm">10 artículos disponibles</span>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80" alt="¿Qué es la inteligencia artificial y cómo funciona?" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Inteligencia Artificial</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">¿Qué es la inteligencia artificial y cómo funciona?</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Descubre de forma sencilla qué es la IA, cómo aprende de los datos y dónde podemos encontrarla.</p>
+                <a href="que-es-la-inteligencia-artificial.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80" alt="Cómo utilizar la IA como herramienta de estudio" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Inteligencia Artificial</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Cómo utilizar la IA como herramienta de estudio</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Ideas prácticas para utilizar herramientas de inteligencia artificial como apoyo al aprendizaje.</p>
+                <a href="ia-para-estudiantes.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=900&q=80" alt="Cómo elegir un celular sin gastar de más" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Tecnología</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Cómo elegir un celular sin gastar de más</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Los puntos principales que conviene comparar antes de elegir un teléfono.</p>
+                <a href="como-elegir-un-celular.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80" alt="Qué debes revisar antes de comprar una laptop" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Tecnología</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Qué debes revisar antes de comprar una laptop</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Procesador, memoria, almacenamiento, pantalla y batería: qué comparar.</p>
+                <a href="como-elegir-una-laptop.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80" alt="Cómo proteger tus cuentas en Internet" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Tecnología</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Cómo proteger tus cuentas en Internet</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Buenas prácticas para mejorar la seguridad de tus cuentas digitales.</p>
+                <a href="como-proteger-tus-cuentas.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80" alt="Aplicaciones que pueden ayudarte a estudiar mejor" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Aplicaciones</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Aplicaciones que pueden ayudarte a estudiar mejor</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Cómo elegir aplicaciones para organizar tareas, tomar notas y practicar.</p>
+                <a href="apps-para-estudiar.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=900&q=80" alt="Cómo organizar tus tareas usando herramientas digitales" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Aplicaciones</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Cómo organizar tus tareas usando herramientas digitales</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Un método sencillo para combinar calendario, tareas y recordatorios.</p>
+                <a href="organizar-tareas-con-tecnologia.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80" alt="Tecnologías que están transformando los videojuegos" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Gaming</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Tecnologías que están transformando los videojuegos</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Gráficos, motores, inteligencia artificial y nuevas formas de interacción.</p>
+                <a href="tecnologia-en-los-videojuegos.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=900&q=80" alt="Cómo mejorar el rendimiento de un PC para videojuegos" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Gaming</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Cómo mejorar el rendimiento de un PC para videojuegos</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Pasos básicos para revisar software, almacenamiento, temperatura y configuración.</p>
+                <a href="mejorar-rendimiento-pc-gaming.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+
+        <article class="article-card glass-card rounded-2xl overflow-hidden">
+            <div class="h-52 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=80" alt="Seguridad digital básica: hábitos que conviene adoptar" class="article-image w-full h-full object-cover" loading="lazy">
+            </div>
+            <div class="p-7">
+                <span class="text-xs font-bold uppercase tracking-widest text-secondary">Tecnología</span>
+                <h3 class="text-xl font-bold text-primary mt-3 mb-3">Seguridad digital básica: hábitos que conviene adoptar</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">Una guía introductoria para mejorar tus hábitos de seguridad en Internet.</p>
+                <a href="seguridad-digital-basica.html" class="inline-flex items-center gap-2 text-secondary font-bold mt-6 hover:text-primary transition">
+                    Leer artículo
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </article>
+
+</div>
+</div>
+</section>
+
+<section id="tecnologia" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+<div>
+<div class="w-14 h-14 rounded-xl bg-primaryContainer text-white flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">devices</span></div>
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-5">Tecnología</h2>
+<p class="text-gray-600 text-lg leading-relaxed mb-7">Guías y contenidos sobre dispositivos, software, Internet, seguridad digital e innovación.</p>
+<a href="como-elegir-un-celular.html" class="inline-flex items-center gap-2 bg-primary text-white font-bold py-3 px-6 rounded-lg">Leer guía <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="rounded-2xl overflow-hidden shadow-xl">
+<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80" alt="Computadora y tecnología" class="w-full h-80 object-cover">
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-5 px-4 bg-white">
+<div class="max-w-5xl mx-auto"><div class="ad-container rounded-xl">Publicidad</div></div>
+</section>
+
+<section id="ia" class="py-20 bg-blue-50">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<div class="w-14 h-14 rounded-xl bg-cyan-300 text-secondary flex items-center justify-center mx-auto mb-6"><span class="material-symbols-outlined text-3xl">smart_toy</span></div>
+<h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Inteligencia Artificial</h2>
+<p class="text-gray-600 text-lg">Aprende sobre las nuevas herramientas de IA y cómo utilizarlas.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<a href="que-es-la-inteligencia-artificial.html" class="glass-card rounded-2xl p-7 hover:-translate-y-1 transition">
+<span class="material-symbols-outlined text-primary text-4xl">auto_awesome</span>
+<h3 class="text-xl font-bold text-primary mt-5 mb-3">¿Qué es la IA?</h3>
+<p class="text-gray-600">Conoce los conceptos básicos de la inteligencia artificial.</p>
+</a>
+<a href="ia-para-estudiantes.html" class="glass-card rounded-2xl p-7 hover:-translate-y-1 transition">
+<span class="material-symbols-outlined text-primary text-4xl">school</span>
+<h3 class="text-xl font-bold text-primary mt-5 mb-3">IA para estudiar</h3>
+<p class="text-gray-600">Ideas para utilizar la IA como apoyo al aprendizaje.</p>
+</a>
+<a href="que-es-la-inteligencia-artificial.html" class="glass-card rounded-2xl p-7 hover:-translate-y-1 transition">
+<span class="material-symbols-outlined text-primary text-4xl">trending_up</span>
+<h3 class="text-xl font-bold text-primary mt-5 mb-3">Tendencias de IA</h3>
+<p class="text-gray-600">Entiende hacia dónde avanza esta tecnología.</p>
+</a>
+</div>
+</div>
+</section>
+
+<section id="apps" class="py-20 bg-white">
+<div class="max-w-7xl mx-auto px-4 md:px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a href="apps-para-estudiar.html" class="glass-card rounded-2xl p-8 hover:-translate-y-1 transition">
+<div class="w-14 h-14 rounded-xl bg-cyan-300 text-secondary flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">apps</span></div>
+<h2 class="text-2xl font-bold text-primary mb-4">Aplicaciones</h2>
+<p class="text-gray-600 leading-relaxed mb-6">Recomendaciones y guías sobre aplicaciones útiles para estudiar y organizarte.</p>
+<span class="text-secondary font-bold">Explorar apps →</span>
+</a>
+<div id="gaming" class="glass-card rounded-2xl p-8">
+<div class="w-14 h-14 rounded-xl bg-primaryContainer text-white flex items-center justify-center mb-6"><span class="material-symbols-outlined text-3xl">sports_esports</span></div>
+<h2 class="text-2xl font-bold text-primary mb-4">Gaming</h2>
+<p class="text-gray-600 leading-relaxed mb-6">Noticias y guías sobre videojuegos, PC gaming y tecnología para jugadores.</p>
+<div class="flex gap-5 flex-wrap">
+<a href="tecnologia-en-los-videojuegos.html" class="text-secondary font-bold">Tecnología gaming →</a>
+<a href="mejorar-rendimiento-pc-gaming.html" class="text-secondary font-bold">Optimizar PC →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-5 px-4 bg-white">
+<div class="max-w-5xl mx-auto"><div class="ad-container rounded-xl">Publicidad</div></div>
+</section>
+
+<section class="py-20 cta-gradient text-white relative overflow-hidden">
+<div class="max-w-4xl mx-auto px-4 md:px-6 text-center relative z-10">
+<h2 class="text-3xl md:text-5xl font-extrabold mb-6">No te pierdas las novedades</h2>
+<p class="text-lg text-blue-100 max-w-2xl mx-auto mb-8">Recibe noticias y artículos sobre tecnología, IA, aplicaciones y gaming.</p>
+<form onsubmit="subscribe(event)" class="flex flex-col sm:flex-row max-w-xl mx-auto gap-3">
+<input id="email" type="email" required placeholder="Tu correo electrónico" class="flex-1 px-5 py-4 rounded-xl text-gray-900 outline-none">
+<button type="submit" class="bg-cyan-300 text-secondary font-bold px-7 py-4 rounded-xl hover:scale-105 transition">Suscribirme</button>
+</form>
+<p id="subscribeMessage" class="hidden mt-4 text-sm text-blue-100">¡Gracias por suscribirte!</p>
+</div>
+</section>
+
+</main>
+
+<footer class="bg-white border-t border-blue-100">
+<div class="max-w-7xl mx-auto px-4 md:px-6 py-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+<div>
+<div class="flex items-center gap-2 mb-5"><span class="material-symbols-outlined text-primary text-2xl">bolt</span><span class="text-xl font-bold text-primary">TECHNOVO</span></div>
+<p class="text-gray-600 text-sm leading-relaxed">Tecnología, inteligencia artificial, aplicaciones, gaming y seguridad digital.</p>
+</div>
+<div>
+<h3 class="font-bold text-primary mb-5">Categorías</h3>
+<div class="flex flex-col gap-3 text-sm text-gray-600">
+<a href="#tecnologia" class="hover:text-primary">Tecnología</a>
+<a href="#ia" class="hover:text-primary">Inteligencia Artificial</a>
+<a href="#apps" class="hover:text-primary">Aplicaciones</a>
+<a href="#gaming" class="hover:text-primary">Gaming</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-primary mb-5">Información</h3>
+<div class="flex flex-col gap-3 text-sm text-gray-600">
+<a href="#" class="hover:text-primary">Sobre nosotros</a>
+<a href="contacto.html" class="hover:text-primary">Contacto</a>
+<a href="politica-de-privacidad.html" class="hover:text-primary">Política de privacidad</a>
+<a href="terminos-y-condiciones.html" class="hover:text-primary">Términos y condiciones</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold text-primary mb-5">Technovo</h3>
+<p class="text-sm text-gray-600 leading-relaxed">Información tecnológica para ayudarte a entender mejor el mundo digital.</p>
+</div>
+</div>
+<div class="border-t border-blue-100 mt-12 pt-8 flex flex-col md:flex-row justify-between gap-4">
+<p class="text-sm text-gray-500">© 2026 Technovo. Todos los derechos reservados.</p>
+<p class="text-sm text-gray-500">Hecho para amantes de la tecnología.</p>
+</div>
+</div>
+</footer>
+
+<div id="searchModal" class="hidden fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-start justify-center pt-28 px-4">
+<div class="bg-white rounded-2xl p-6 w-full max-w-xl shadow-2xl">
+<div class="flex justify-between items-center mb-5">
+<h2 class="text-xl font-bold text-primary">Buscar en Technovo</h2>
+<button onclick="closeSearch()" aria-label="Cerrar"><span class="material-symbols-outlined">close</span></button>
+</div>
+<input id="searchInput" type="text" placeholder="¿Qué estás buscando?" class="w-full border border-gray-300 rounded-xl px-5 py-4 outline-none focus:border-primary">
+<p class="text-xs text-gray-500 mt-3">Próximamente: búsqueda entre artículos.</p>
+</div>
+</div>
+
+<script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("active");
+}
+function openSearch() {
+    const modal=document.getElementById("searchModal");
+    modal.classList.remove("hidden");
+    setTimeout(()=>document.getElementById("searchInput").focus(),100);
+}
+function closeSearch() {
+    document.getElementById("searchModal").classList.add("hidden");
+}
+document.getElementById("searchModal").addEventListener("click",function(e){
+    if(e.target===this) closeSearch();
+});
+function subscribe(event) {
+    event.preventDefault();
+    document.getElementById("subscribeMessage").classList.remove("hidden");
+    document.getElementById("email").value="";
+}
+</script>
+</body>
+</html>
